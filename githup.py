@@ -46,10 +46,8 @@ def commit_files(branch_name, commit_message, folder_path="local"):
     commands_to_execute = ["git add --all",
                            f"git commit -m '{commit_message}'",
                            f"git branch -M {branch_name}",
-                           "git push -u origin {branch_name}"
+                           f"git push -u origin {branch_name}"
                            ]
-    
-    print(commands_to_execute)
     
     os.chdir(folder_path)
     execute_commands(commands_to_execute) #executing required commands to commit files
